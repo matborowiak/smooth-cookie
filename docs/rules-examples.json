@@ -1,0 +1,30 @@
+[
+  {
+    "id": "example-single-reject",
+    "domains": ["example.com"],
+    "presence": ".cookie-banner",
+    "optOut": ".cookie-banner button[data-action=reject]"
+  },
+  {
+    "id": "example-two-step-preferences",
+    "domains": ["site-with-preferences.com"],
+    "presence": "#consent-modal",
+    "steps": [
+      { "click": "#consent-modal a[href='#preferences']" },
+      { "wait": 300 },
+      { "click": "#preferences-panel button.reject-all" },
+      { "click": "#preferences-panel button.save" }
+    ]
+  },
+  {
+    "id": "example-cookie-only",
+    "domains": ["legacy-cmp.com"],
+    "cookies": [
+      {
+        "name": "cookie_consent",
+        "value": "necessary_only",
+        "path": "/"
+      }
+    ]
+  }
+]
